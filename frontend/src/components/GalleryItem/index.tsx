@@ -1,13 +1,12 @@
 import { Container } from './styles';
 
 interface GalleryItemProps {
-  id: string;
   title: string;
   image: string;
   artistId?: string;
 }
 
-export function GalleryItem({ id, title, image, artistId }: GalleryItemProps) {
+export function GalleryItem({ title, image, artistId }: GalleryItemProps) {
   return (
     <Container imgUrl={image}>
       <a>

@@ -10,7 +10,7 @@ export const Container = styled.div<ContainerProps>`
     width: 100%;
     background: url(${props => props.imgUrl}) no-repeat center;
     background-size: cover;
-    height: 15rem;
+    height: 20rem;
     padding: 1.5rem;
     border-radius: 0.5rem;
     display: flex;
@@ -31,9 +31,11 @@ export const Container = styled.div<ContainerProps>`
 
     section {
       z-index: 2;
+      background-color: ${({ theme }) => theme.colors.secondary};
+
       h1 {
         padding: 1rem;
-        color: ${({ theme }) => theme.colors.secondary};
+        color: ${({ theme }) => theme.colors.primary};
       }
     }
 

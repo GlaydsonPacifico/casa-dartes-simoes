@@ -4,7 +4,7 @@ import { ProductContainer } from './styles';
 interface ProductsBoardProps {
   title: string;
   image: string;
-  artistId: string;
+  artistId?: string;
 }
 
 export function ProductItem({

@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import api from '../../utils/api';
+import { CiCircleMore } from 'react-icons/ci';
 
 import { SectionTitle } from '../SectionTitle';
 import { ProductItem } from './ProductItem';
+import { Loading } from '../Loading';
+
 import { Container } from './styles';
 
-import { Loading } from '../Loading';
+import api from '../../utils/api';
 
 
 interface Product {
@@ -47,7 +49,11 @@ export function ProductsBoard() {
         {!loading && <Loading />}
       </section>
       <button type="button">
-        <Link to="/gallery">Ver mais</Link>
+        <Link to="/gallery">
+          <span>
+            Ver mais <CiCircleMore />
+          </span>
+        </Link>
       </button>
     </Container>
   );

@@ -30,18 +30,17 @@ button {
     background: ${({ theme }) => theme.colors.primary};
   }
 
-  a {
-    color: ${({ theme }) => theme.colors.primary};
+  span {
+    color: ${({ theme }) => theme.colors.textLight};
     text-transform: uppercase;
     font-weight: 600;
     font-size: 1.2rem;
     transition: 0.5s;
   }
 
-  &:hover > a {
+  &:hover > span {
     color: ${({ theme }) => theme.colors.textLight}
   }
-
 }
 `;
 
@@ -69,7 +68,7 @@ button {
   height: 4rem;
   width: 12rem;
 
-  a {
+  span {
     font-size: 1.2rem;
     display: flex;
     align-items: center;

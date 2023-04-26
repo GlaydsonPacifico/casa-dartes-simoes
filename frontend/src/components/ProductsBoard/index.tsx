@@ -3,6 +3,7 @@ import { SectionTitle } from '../SectionTitle';
 import { ProductItem } from './ProductItem';
 import { Container } from './styles';
 import api from '../../utils/api';
+import { Link } from 'react-router-dom';
 
 interface Product {
   id: string;
@@ -39,7 +40,7 @@ export function ProductsBoard() {
         ))}
       </section>
       <button type="button">
-        <a href="/gallery">Ver mais</a>
+        <Link to="/gallery">Ver mais</Link>
       </button>
     </Container>
   );

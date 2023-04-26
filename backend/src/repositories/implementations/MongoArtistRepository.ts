@@ -24,7 +24,11 @@ export class MongoArtistRepository implements IArtistRepository {
   }
 
   async findAll(): Promise<Artist[]> {
-    return await this.prisma.artist.findMany({});
+    return await this.prisma.artist.findMany({
+      orderBy: {
+        name: 'asc'
+      }
+    });
   }
 
 }

@@ -129,8 +129,6 @@ section {
     right: 1rem;
     transition: right 0.3s ease-out;
   }
-
-
 }
 
 @media (max-width: 800px) {
@@ -150,7 +148,11 @@ section {
     }
   }
 
-  button a {
+  span {
+      color: ${({ theme }) => theme.colors.secondary} !important;
+    }
+
+  button span {
     padding-left: 1rem;
   }
 

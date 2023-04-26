@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import api from '../../utils/api';
+
 import { SectionTitle } from '../SectionTitle';
 import { ProductItem } from './ProductItem';
 import { Container } from './styles';
-import api from '../../utils/api';
-import { Link } from 'react-router-dom';
+
+import { Loading } from '../Loading';
+
 
 interface Product {
   id: string;
@@ -14,11 +18,13 @@ interface Product {
 
 export function ProductsBoard() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setloading] = useState(false);
 
   useEffect(() => {
     api.get('api/products')
       .then(response => {
         setProducts(response.data);
+        setloading(true);
       })
       .catch(error => {
         console.log(error);
@@ -38,6 +44,7 @@ export function ProductsBoard() {
             image={product.image}
           />
         ))}
+        {!loading && <Loading />}
       </section>
       <button type="button">
         <Link to="/gallery">Ver mais</Link>

@@ -53,14 +53,21 @@ align-items: flex-end;
 position: relative;
 
 &:hover {
-  section {
-    div.text {
-      right: -12rem;
-    }
+  div.overlay {
+    opacity: 0.25;
+  }
+}
 
-    div.overlay {
-      opacity: 0.25;
-    }
+section > div.text {
+  text-align: left;
+  position: relative;
+  right: 0;
+  transition: left 0.3s ease-out;
+}
+
+&:hover {
+  section > div.text {
+    left: calc(70% + 1rem);
   }
 }
 
@@ -94,9 +101,13 @@ section {
   }
 
   div.text {
+    background: white;
+    opacity: 75%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    top: 2rem;
+    left: 1rem;
     position: absolute;
-    top: 3rem;
-    right: -10rem;
     transition: 0.5s;
     width: fit-content;
   }
@@ -121,71 +132,73 @@ section {
 
   section > div.text {
     text-align: right;
-    right: 0;
-    left: -10rem;
+    position: absolute;
+    left: auto;
+    right: 1rem;
+    transition: right 0.3s ease-out;
   }
 
   &:hover {
     section > div.text {
-      left: -12rem;
+      right: calc(70% - 1rem);
     }
   }
 }
 
-  @media (max-width: 700px) {
-    section {
-      width: 100%;
+@media (max-width: 700px) {
+  section {
+    width: 100%;
 
-      div.text {
-        background: white;
-        opacity: 75%;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        left: 1rem;
-        top: 1rem;
-      }
-    }
-
-    button a {
-      padding-left: 1rem;
-    }
-
-    button {
+    div.text {
       background: white;
       opacity: 75%;
       padding: 1rem;
       border-radius: 0.5rem;
+      left: 1rem;
+      top: 1rem;
+    }
+  }
+
+  button a {
+    padding-left: 1rem;
+  }
+
+  button {
+    background: white;
+    opacity: 75%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    margin: 0;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row;
+
+    section {
+      width: 100%;
+
+      div.text {
+        left: 1rem;
+        top: 1rem;
+        text-align: left;
+      }
+    }
+
+    button {
       position: absolute;
       bottom: 1rem;
       right: 1rem;
       margin: 0;
     }
 
-    &:nth-child(even) {
-      flex-direction: row;
-
-      section {
-        width: 100%;
-
-        div.text {
-          left: 1rem;
-          top: 1rem;
-          text-align: left;
-        }
-      }
-
-      button {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-        margin: 0;
-      }
-
-      &:hover {
-        section > div.text {
-          left: 1rem;
-        }
+    &:hover {
+      section > div.text {
+        left: 1rem;
       }
     }
   }
+}
 `;

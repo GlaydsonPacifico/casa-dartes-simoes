@@ -3,6 +3,7 @@ import { Header } from '../components/Header';
 import { GalleryItem } from '../components/GalleryItem';
 import { useEffect, useState } from 'react';
 import api from '../utils/api';
+import { Loading } from '../components/Loading';
 
 interface Product {
   id: string;
@@ -13,11 +14,14 @@ interface Product {
 
 export function Gallery() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setloading] = useState(false);
+
 
   useEffect(() => {
     api.get('api/products')
       .then(response => {
         setProducts(response.data);
+        setloading(true);
       })
       .catch(error => {
         console.log(error);
@@ -36,6 +40,7 @@ export function Gallery() {
               image={product.image}
             />
           ))}
+          {!loading && <Loading />}
         </main>
       </GalleryContainer>
     </>

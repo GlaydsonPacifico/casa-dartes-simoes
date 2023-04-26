@@ -30,7 +30,7 @@ export function ProductsBoard() {
       <SectionTitle title='Alguns de nossos produtos' />
 
       <section>
-        {products.map(product => (
+        {products.slice(0,5).map(product => (
           <ProductItem
             key={product.id}
             title={product.title}

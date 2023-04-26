@@ -22,7 +22,7 @@ export function ProductItem({
         </div>
       </section>
       <button>
-        <a href="#">
+        <a href="/gallery">
         Ver mais <AiOutlineRightCircle />
         </a>
       </button>

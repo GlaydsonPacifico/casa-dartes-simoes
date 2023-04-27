@@ -19,14 +19,22 @@ export const Container = styled.div<ContainerProps>`
     border-radius: 0.5 rem;
     border: 1px solid ${({ theme }) => theme.colors.primary};
     transition: 0.5s;
-    cursor: pointer;
     overflow: hidden;
 
     &:hover {
-      border-color: ${({ theme }) => theme.colors.texLight};
       div.overlay {
         opacity: 0.25;
       }
+    }
+
+    svg {
+      cursor: pointer;
+      z-index: 3;
+      border-radius: 0.5rem;
+      background-color: ${({ theme }) => theme.colors.textLight};
+      color: ${({ theme }) => theme.colors.primary};
+      width: 3rem;
+      height: 3rem;
     }
 
     section {

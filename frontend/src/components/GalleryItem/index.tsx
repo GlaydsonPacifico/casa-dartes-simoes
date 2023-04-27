@@ -1,3 +1,4 @@
+import { AiOutlineWhatsApp } from 'react-icons/ai';
 import { Container } from './styles';
 
 interface GalleryItemProps {
@@ -7,6 +8,24 @@ interface GalleryItemProps {
 }
 
 export function GalleryItem({ title, image, artistId }: GalleryItemProps) {
+
+  function handleShareOnWhatsApp() {
+    const urlToShorten = encodeURIComponent(image);
+    const apiUrl = `https://api.shrtco.de/v2/shorten?url=${urlToShorten}`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const shortUrl = data.result.full_short_link;
+        const message = `Confira este produto: ${title} - ${shortUrl}`;
+        const phone = '558196216405';
+        const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
+        window.open(url, '_blank');
+      })
+      .catch(error => {
+        console.error('Erro ao encurtar URL:', error);
+      });
+  }
   return (
     <Container imgUrl={image}>
       <a>
@@ -15,6 +34,7 @@ export function GalleryItem({ title, image, artistId }: GalleryItemProps) {
             <h1>{title}</h1>
           </section>
         </div>
+        <AiOutlineWhatsApp onClick={handleShareOnWhatsApp}/>
       </a>
     </Container>
   );

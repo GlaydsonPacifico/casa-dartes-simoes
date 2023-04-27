@@ -2,7 +2,6 @@ import { AiOutlineRightCircle, AiOutlineWhatsApp, AiOutlineClose } from 'react-i
 import { ProductContainer } from './styles';
 import { useState } from 'react';
 import { ModalButton, ModalContainer } from '../Modal/styles';
-import api from '../../utils/api';
 
 interface ProductsBoardProps {
   title: string;

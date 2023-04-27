@@ -1,7 +1,8 @@
 import { AiOutlineRightCircle, AiOutlineWhatsApp, AiOutlineClose } from 'react-icons/ai';
 import { ProductContainer } from './styles';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ModalButton, ModalContainer } from '../Modal/styles';
+import api from '../../utils/api';
 
 interface ProductsBoardProps {
   title: string;
@@ -28,10 +29,9 @@ export function ProductItem({
     const urlToShorten = encodeURIComponent(image);
     const apiUrl = `https://api.shrtco.de/v2/shorten?url=${urlToShorten}`;
 
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        const shortUrl = data.result.full_short_link;
+    api.get(apiUrl)
+      .then(response => {
+        const shortUrl = response.data.result.full_short_link;
         const message = `Confira este produto: ${title} - ${shortUrl}`;
         const phone = '558196216405';
         const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
@@ -41,6 +41,19 @@ export function ProductItem({
         console.error('Erro ao encurtar URL:', error);
       });
   }
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        handleCloseModal();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleCloseModal]);
+
 
 
   return (

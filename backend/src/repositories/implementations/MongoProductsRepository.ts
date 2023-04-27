@@ -17,7 +17,8 @@ export class MongoProductRepository implements IProductRepository {
   }
 
   async findAll(): Promise<Product[]> {
-    return await this.prisma.product.findMany({});
+    return await this.prisma.product.findMany({
+      orderBy: { createdAt: 'desc' }
+    });
   }
-
 }

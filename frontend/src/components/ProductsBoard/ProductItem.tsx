@@ -2,6 +2,7 @@ import { AiOutlineRightCircle, AiOutlineWhatsApp, AiOutlineClose } from 'react-i
 import { ProductContainer } from './styles';
 import { useState } from 'react';
 import { ModalButton, ModalContainer } from '../Modal/styles';
+import api from '../../utils/api';
 
 interface ProductsBoardProps {
   title: string;
@@ -25,10 +26,21 @@ export function ProductItem({
   }
 
   function handleShareOnWhatsApp() {
-    const message = `Confira este produto: ${title} - ${image}`;
-    const phone = '558196216405';
-    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
-    window.open(url, '_blank');
+    const urlToShorten = encodeURIComponent(image);
+    const apiUrl = `https://api.shrtco.de/v2/shorten?url=${urlToShorten}`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const shortUrl = data.result.full_short_link;
+        const message = `Confira este produto: ${title} - ${shortUrl}`;
+        const phone = '558196216405';
+        const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
+        window.open(url, '_blank');
+      })
+      .catch(error => {
+        console.error('Erro ao encurtar URL:', error);
+      });
   }
 
 

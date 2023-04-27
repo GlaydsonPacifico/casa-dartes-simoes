@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const ModalContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.3);
-  max-width: 35rem;
+  box-shadow: 0 0 0.7rem ${({ theme }) => theme.colors.secondary};
+  width: 30vw;
   padding: 1.2rem;
   position: fixed;
   top: 50%;
@@ -22,6 +22,10 @@ export const ModalContainer = styled.div`
     color: ${({ theme }) => theme.colors.secondary};
     font-size: 1.5rem;
     font-weight: 300;
+  }
+
+  @media(max-width: 800px) {
+    width: 80vw;
   }
 
 `;

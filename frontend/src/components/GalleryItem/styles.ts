@@ -16,7 +16,7 @@ export const Container = styled.div<ContainerProps>`
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    border-radius: 0.5 rem;
+    border-radius: 0.5rem;
     border: 1px solid ${({ theme }) => theme.colors.primary};
     transition: 0.5s;
     overflow: hidden;
@@ -28,6 +28,7 @@ export const Container = styled.div<ContainerProps>`
     }
 
     svg {
+      opacity: 0.7;
       cursor: pointer;
       z-index: 3;
       border-radius: 0.5rem;

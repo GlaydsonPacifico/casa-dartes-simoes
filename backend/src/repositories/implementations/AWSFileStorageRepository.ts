@@ -17,6 +17,7 @@ export class AWSFileStorageRepository implements IFileStorageRepository {
       Bucket: 'images-atelie',
       Key: `uploads/${key}`,
       Body: fileBuffer,
+      ContentType: 'image/jpeg',
     };
 
     const command = new PutObjectCommand(params);

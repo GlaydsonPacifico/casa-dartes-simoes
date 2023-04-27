@@ -32,7 +32,7 @@
 
 ## Sobre o projeto
 
-Este projeto é dividido em duas partes: o frontend e o backend. O frontend é construído com o framework Next.js, que nos permite renderizar o conteúdo no lado do servidor, garantindo uma melhor experiência para o usuário. O frontend é responsável por exibir as informações sobre as peças de arte produzidas no atelier, além de permitir que o usuário faça pedidos.
+Este projeto utiliza o framework React em conjunto com o Vite, que é um poderoso e rápido sistema de construção e desenvolvimento de aplicações. O frontend é responsável por renderizar e exibir as informações sobre as peças de arte produzidas no atelier, além de permitir que o usuário faça pedidos, proporcionando uma experiência otimizada e interativa.
 
 Já o backend é construído com o framework Express, que nos permite criar rotas para a aplicação, além de gerenciar os dados de forma eficiente. No backend, foram utilizadas diversas bibliotecas, como o Prisma, que é responsável por fazer a conexão com o banco de dados, o Bcrypt, que nos permite criptografar senhas, o Jsonwebtoken, que nos permite criar e validar tokens de autenticação, entre outras.
 

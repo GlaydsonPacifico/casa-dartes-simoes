@@ -41,9 +41,9 @@ export function Gallery() {
               image={product.image}
             />
           ))}
-          {!loading && <Loading />}
         </main>
       </GalleryContainer>
+      {!loading && <Loading />}
       <Footer />
     </>
   );

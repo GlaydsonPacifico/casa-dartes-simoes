@@ -76,7 +76,6 @@ export function ProductItem({
       {isModalOpen && (
         <ModalContainer>
           <section>
-            <h1>{title}</h1>
             <img src={image} alt={title} />
           </section>
           <ModalButton >

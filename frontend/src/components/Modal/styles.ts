@@ -10,7 +10,12 @@ export const ModalContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 1;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
   h1 {
     color: ${({ theme }) => theme.colors.primary};
@@ -27,7 +32,6 @@ export const ModalContainer = styled.div`
   @media(max-width: 800px) {
     width: 80vw;
   }
-
 `;
 
 export const ModalButton = styled.div`
@@ -41,6 +45,4 @@ export const ModalButton = styled.div`
       width: 2.5rem;
       height: 2.5rem;
     }
-
-
   `;

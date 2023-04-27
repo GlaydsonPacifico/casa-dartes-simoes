@@ -16,7 +16,6 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
     <>
       {isOpen && (
         <ModalContainer onClick={handleModalClick}>
-          <h1>{title}</h1>
           {children}
           <button onClick={onClose}>Fechar</button>
         </ModalContainer>

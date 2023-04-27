@@ -4,6 +4,7 @@ import { GalleryItem } from '../components/GalleryItem';
 import { useEffect, useState } from 'react';
 import api from '../utils/api';
 import { Loading } from '../components/Loading';
+import { Footer } from '../components/Footer';
 
 interface Product {
   id: string;
@@ -43,6 +44,7 @@ export function Gallery() {
           {!loading && <Loading />}
         </main>
       </GalleryContainer>
+      <Footer />
     </>
   );
 }

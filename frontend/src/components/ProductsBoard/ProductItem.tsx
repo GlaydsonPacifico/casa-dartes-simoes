@@ -27,9 +27,7 @@ export function ProductItem({
   function handleShareOnWhatsApp() {
     const message = `Confira este produto: ${title} - ${image}`;
     const phone = '558196216405';
-    const imageLink = encodeURIComponent(image);
-    const messageLink = encodeURIComponent(`${message}\n${imageLink}`);
-    const url = `whatsapp://send?phone=${phone}&text=${messageLink}`;
+    const url = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
     window.open(url, '_blank');
   }
 
@@ -54,11 +52,8 @@ export function ProductItem({
       {isModalOpen && (
         <ModalContainer>
           <section>
-            <div className="overlay" />
-            <div className="text">
-              <h1>{title}</h1>
-              <img src={image} alt={title} />
-            </div>
+            <h1>{title}</h1>
+            <img src={image} alt={title} />
           </section>
           <ModalButton >
             <AiOutlineWhatsApp onClick={handleShareOnWhatsApp}/>

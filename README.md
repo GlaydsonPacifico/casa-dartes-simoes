@@ -5,7 +5,6 @@
 ## Tecnologias utilizadas
 ### Backend
 - @aws-sdk/client-s3 - Cliente para acesso ao Amazon S3;
-- @aws-sdk/s3-request-presigner - Biblioteca para assinar solicitações de URL pré-assinadas do Amazon S3;
 - @prisma/client - ORM para Node.js;
 - aws-sdk - Cliente para AWS;
 - bcrypt - Biblioteca de criptografia para senhas;
@@ -20,8 +19,6 @@
 - @babel/core - Compilador de JavaScript para JavaScript mais antigo;
 - aos - Biblioteca de animações para rolagem suave;
 - axios - Biblioteca para realizar chamadas HTTP em JavaScript;
-- next - Framework React para renderização do lado do servidor;
-- next-images - Suporte para imagens com Next.js;
 - polished - Conjunto de ferramentas para estilização em JavaScript;
 - react - Biblioteca para construção de interfaces de usuário;
 - react-dom - Pacote para manipulação do DOM em aplicações React;
